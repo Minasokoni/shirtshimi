@@ -1,8 +1,9 @@
-body {
+body,html {
 	background:#fff;
 	font-family:"futura-pt-1", sans-serif;
 	margin:0;
 	padding:0;
+	height:100%;
 }
 
 header#mini {
@@ -90,6 +91,7 @@ header#main {
 
 header#main ul li {
 	min-width:120px;
+	position: relative;
 }
 header#main ul li a {
 	color:#000;
@@ -100,6 +102,7 @@ header#main ul li a {
 	height:90px;
 	text-align:center;
 	display:block;
+	position: relative;
 	font-size:14px;
 	-webkit-transition: all 200ms ease-out;
 	-moz-transition:all 200ms ease-out;
@@ -107,12 +110,22 @@ header#main ul li a {
 	transition: all 200ms ease-out;
 }
 
+header#main ul li.active:after {
+	content:'';
+	position:absolute;
+	border-bottom:4px solid #f23131;
+	bottom:0;
+	left:0;
+	width:100%;
+	display:block;
+}
+
 header#main a#logo {
 	width:72px;
 	height:77px;
 	margin-left:-36px;
 	left:50%;
-	top:-10px;
+	top:48px;
 	position: absolute;
 	background:url(../images/logo.png) 0 0 no-repeat;
 	display:block;
@@ -154,4 +167,83 @@ header#main ul li a:hover {
 }
 .navbar-header {
 	border-bottom:1px solid #ededed;
+}
+
+.carousel {
+	margin-bottom:0;
+}
+.carousel-inner img{
+	margin:0 auto;
+}
+.carousel-inner > div {
+	background:#999;
+}
+
+.carousel .carousel-control {
+	width:30px;
+	height:85px;
+	background:#fff;
+	color:#000;
+	border:none;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	opacity: 1.0;
+	filter: alpha(opacity=100);
+	top:50%;
+	margin-top:-43px;
+	text-shadow:none;
+}
+.carousel .carousel-control {
+	color:#000;
+}
+.carousel .carousel-control.left:after {
+	content:'\F104';
+	font-family:FontAwesome;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top:-13px;
+	margin-left:-4px;
+}
+.carousel .carousel-control.right:after {
+	content:'\F105';
+	font-family:FontAwesome;
+	position: absolute;
+	top:50%;
+	right:50%;
+	margin-top:-13px;
+	margin-right:-4px;
+}
+
+footer#main {
+	width:100%;
+	float:left;
+	height:45px;
+	border-top:1px solid #ebebeb;
+}
+footer#main ul {
+	margin:0;
+	padding:0;
+}
+
+footer#main ul li {
+	display:inline;
+	float:left;
+	margin:0 0 0 10px;
+	height:45px;
+}
+footer#main ul li.social {
+	width:45px;
+	margin:0;
+}
+
+footer#main ul li a {
+	color:#000;
+	font-weight:bold;
+	line-height:45px;
+	font-size:12px;
+	text-transform:uppercase;
+	text-decoration:none;
+	text-align:center;
 }
